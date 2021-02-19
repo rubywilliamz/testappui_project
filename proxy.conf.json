@@ -1,0 +1,8 @@
+{
+    "/testapp/*": {
+        "target": "https://devgroceryapi.spericorn.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

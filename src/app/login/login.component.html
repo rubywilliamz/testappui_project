@@ -1,0 +1,40 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+     <h3>Login</h3>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username" formControlName="email">
+    
+      <div *ngIf="formSubmiited && form.email.errors" class="invalid-error">
+      <div *ngIf="formSubmiited && form.email.errors?.required">
+ Email is required.
+      </div>
+      <div *ngIf="formSubmiited && form.email.errors?.email">
+        please enter valid email.
+             </div>
+    </div>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <div *ngIf="formSubmiited && form.password.errors" class="invalid-error">
+        <div *ngIf="formSubmiited && form.password.errors?.required">
+   Password is required.
+        </div>
+        <div *ngIf="formSubmiited && form.password.errors?.minlength">
+            Minimum 8 characters required.
+          </div>
+          <!-- <div *ngIf="formSubmiited && form.password.errors?.pattern">
+            Password contain atleast one special character.
+          </div> -->
+      </div>
+      <input type="button" class="fadeIn fourth" value="Log In" (click)="checkLogin()">
+    </form>
+
+
+  </div>
+</div>
